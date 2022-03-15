@@ -51,6 +51,15 @@
   height: 200px;
   min-width: 500px;
   overflow-y: scroll;
-  padding: 20px;
+  padding: 5px 10px;
+  margin-top: 10px;
   border: 2px solid black;
+}
+
+.folder{
+  cursor: pointer;
+}
+.folder:hover{
+  cursor: pointer;
+  text-decoration: underline;
 }

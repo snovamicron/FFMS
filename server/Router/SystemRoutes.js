@@ -76,16 +76,17 @@ router.post('/createfolder', [
     }
     try {
         const { folderName, parentFolderName, childeFolderNames, childeFilesNames } = req.body
-        let folder = await FolderData.find({folderName}).exec()
-        if(folder){
-            res.status(400).send('folder is already exist')
+        let folder = await FolderData.findOne({folderName}).exec()
+        if(!folder){
+            folder = await FolderData.create({
+                folderName,
+                parentFolderName,
+                childeFolderNames,
+                childeFilesNames
+            })
+            res.status(200).json(folder)
         }
-        folder = await FolderData.create({
-            folderName,
-            parentFolderName,
-            childeFolderNames,
-            childeFilesNames
-        })
+        res.status(400).send('folder is already exist')
     } catch (error) {
         res.status(500).send('internal server error')
         console.log('getting error while creating new folder ' + error);
@@ -109,6 +110,21 @@ router.get('/fetchfolders/:fn?', async (req, res)=>{
     } catch (error) {
         res.status(500).send('internal server error')
         console.log('getting error while fetch files ' + error);
+    }
+})
+
+
+// end point for fetch one folder data
+router.get('/fetchonefolder/:fn?', async(req, res)=>{
+    try {
+        let folder = await FolderData.findOne({folderName: req.params.fn}).exec()
+        if(!folder){
+            res.status(404).send('Folder not found')
+        }
+        res.status(200).json(folder)
+    } catch (error) {
+        res.status(500).send('internal server error')
+        console.log(error)
     }
 })
 

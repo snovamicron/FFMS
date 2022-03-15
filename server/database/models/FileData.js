@@ -7,8 +7,8 @@ const FileSchema = new Schema({
         type: String,
         required:true
     },
-    FileData:{
-        type: Buffer,
+    FilePath:{
+        type: String,
         required: true
     },
     FileName:{

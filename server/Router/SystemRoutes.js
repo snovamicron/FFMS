@@ -80,9 +80,7 @@ router.post('/createfolder', [
         if(!folder){
             folder = await FolderData.create({
                 folderName,
-                parentFolderName,
-                childeFolderNames,
-                childeFilesNames
+                parentFolderName
             })
             res.status(200).json(folder)
         }

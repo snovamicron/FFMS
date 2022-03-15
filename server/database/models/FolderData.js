@@ -11,12 +11,6 @@ const FolderSchema = new Schema({
     parentFolderName:{
         type: String,
         required: true
-    },
-    childeFolderNames:{
-        type: Array
-    },
-    childeFilesNames:{
-        type: Array
     }
 })
 

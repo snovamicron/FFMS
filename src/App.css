@@ -3,8 +3,17 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
+}
+
+.inputBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+  /* border: 2px solid white; */
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -35,4 +44,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.container{
+  height: 200px;
+  min-width: 500px;
+  overflow-y: scroll;
+  padding: 20px;
+  border: 2px solid black;
 }

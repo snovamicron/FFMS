@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
+import CreateFolder from './components/CreateFolder';
 
 
 // components
@@ -15,10 +15,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src="logo192.png" className="App-logo" alt="logo" />
         <FolderContextProvider>
         <div className='inputBox'>   
         <FileUploadForm/>
+        <CreateFolder/>
         </div>
         <Displayff/>
         </FolderContextProvider>

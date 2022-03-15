@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 
-// API for saveing multiple files on database
+// API for saveing files on database
 
 export const save_files = async (payload, folderName = 'root')=>{
     try {
@@ -29,6 +29,22 @@ export const fetch_files = async (folderName = 'root')=>{
         return response
     } catch (error) {
         console.log('getting error while calling fetch_files ' + error)
+    }
+}
+
+
+// API for saving folders on server
+
+export const save_folder = async(payload)=>{
+    try {
+        const response = await axios({
+            method:'POST',
+            url:'http://localhost:4000/createfolder',
+            data: payload
+        })
+        return response
+    } catch (error) {
+        console.log('getting error while calling save_folder api ' + error)
     }
 }
 

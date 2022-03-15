@@ -7,8 +7,7 @@ import { fetch_files, fetch_folders, fetch_one_folder } from "../services/Apis"
 import { FolderContext } from "../context/FolderContext"
 
 const Displayff = ()=>{
-    const { fileUpload, folderUpload, currentFolder, setCurrentFolder } = useContext(FolderContext)
-    console.log(currentFolder.folder)
+    const { fileUpload, folderUpload, currentFolder, setCurrentFolder } = useContext(FolderContext)     
     const [files, setFilse] = useState([])
     const [folders, setFolders] = useState([])
 

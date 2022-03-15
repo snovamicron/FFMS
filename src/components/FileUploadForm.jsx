@@ -24,7 +24,7 @@ const FileUploadForm = () =>{
      setFileUpload(response.data)
   }
     return(
-        <form onSubmit={(e) => e.preventDefault()}>
+        <form onSubmit={(e) => e.preventDefault()} className='fileForm'>
         <p>input your file</p>
         <input type='file' name='file' onChange={onFileChange}/>
         <button type='submit' onClick={onUpload}>upload the file</button>

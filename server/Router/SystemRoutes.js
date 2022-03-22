@@ -29,8 +29,7 @@ router.post('/savefile/:fn?', (req, res) => {
             return res.status(400).send('File not uploaded')
         }
         try {
-            console.log(files)
-            const dataBaseURL = `C:/Users/NOVA/Desktop/main/ffms/server/database/localdatabase/${files.file.originalFilename}`
+            const dataBaseURL = `${process.cwd()}/database/localdatabase/${files.file.originalFilename}`
             await fse.copy(files.file.filepath, dataBaseURL)
             const response = await FileData.create({
                 parentFolder: req.params.fn,
